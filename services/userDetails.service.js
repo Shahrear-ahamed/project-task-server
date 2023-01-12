@@ -9,4 +9,15 @@ userDetailsModels.addUserDetailsService = async (data) => {
   }
 };
 
+userDetailsModels.updateUserDetailsService = async (data, id) => {
+  try {
+    const update = await userDetails.updateOne({ _id: id }, data);
+    const newData = await userDetails.findById(id);
+
+    return { update, newData };
+  } catch (err) {
+    throw new Error(err.message);
+  }
+};
+
 module.exports = userDetailsModels;
