@@ -4,6 +4,7 @@ const cors = require("cors");
 
 // routes are import here
 const userDetailsRouter = require("./routers/userDetails.router");
+const sectorsRouter = require("./routers/sectors.router");
 
 // middle ware are here
 app.use(cors());
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/userDetails", userDetailsRouter);
+app.use("/api/v1/sectors", sectorsRouter);
 
 // exports the app
 module.exports = app;
