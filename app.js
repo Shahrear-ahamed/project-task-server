@@ -7,7 +7,11 @@ const userDetailsRouter = require("./routers/userDetails.router");
 const sectorsRouter = require("./routers/sectors.router");
 
 // middle ware are here
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 // Routes
